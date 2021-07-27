@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.poke-card {
+  display: flex;
+  flex-flow: column wrap;
+  border: 1px solid black;
+  margin: 1em;
+}
+
+.poke-card-header {
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid black;
+}
+.poke-card-header>span {
+  font-size: .5em;
+  font-weight: 300;
+}
+
+.poke-card-header>div {
+  font-size: 1.25em;
+  font-weight: 800;
+}
+
+.poke-card-img>img {
+  width: 15em;
+  height: auto;
+}
+
+.poke-card-body {
+  align-content: center;
+}
