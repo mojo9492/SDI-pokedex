@@ -3,8 +3,10 @@ import PokeCard from './poke-card/PokeCard';
 import PokePanel from './poke-panel/PokePanel';
 
 const PokeShell = (props) => {
-    
+
     if (!props.clickState) {
+       
+
         return (
             <div onClick={(e) => {
                 e.preventDefault()

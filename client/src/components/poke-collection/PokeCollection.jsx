@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PokeShell from '../poke-shell/PokeShell';
 
 const PokeCollection = (props) => {
-    let [clickState, setClickState] = React.useState(false);
-    // if (!clickState) {
-         const { pokemonArray } = props;
-    // } else if (clickState) {
-    //     const pokemonArray = [];
-    // }
+    const [clickState, setClickState] = React.useState(false);
+    const {pokemonArray} = props;
+
+
     
+
+
     return (
-        pokemonArray.map(pokemon => <PokeShell setClickState={(newState) => {setClickState(newState)}} key={pokemon.id} pokemon={pokemon}/>)
-    )
-}
+        pokemonArray.map(pokemon => <PokeShell clickState={clickState} setClickState={(newState) => {setClickState(newState)}} key={pokemon.id} pokemon={pokemon}/>)
+    );
+};
+
 export default PokeCollection

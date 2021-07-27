@@ -4,6 +4,12 @@ import PokeCollection from './components/poke-collection/PokeCollection';
 const App = () => {
   const [pokemonArray, setPokemonArray] = useState([]);
 
+        //filter (type)
+        //dropdownmenue filters pokemon array
+        //
+        //
+        //
+
 
   useEffect(() => {
       //option 1
