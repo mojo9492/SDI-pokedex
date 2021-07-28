@@ -1,33 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PokeCollection from './components/poke-collection/PokeCollection';
+import TopBar from './components/top-bar/TopBar';
+import { PokeContext } from './PokeContext';
 
 const App = () => {
-  const [pokemonArray, setPokemonArray] = useState([]);
 
-        //filter (type)
-        //dropdownmenue filters pokemon array
-        //
-        //
-        //
+  const [pokemonArray, setPokemonArray] = useState([])
+
+  //filter (type)
+  //dropdownmenue filters pokemon array
+  //
+  //
+  //
+  // types dropdown
+  // moves on stats
 
 
-  useEffect(() => {
-      //option 1
-      const pokemonPromiseArray = [];
-      // for loop 1-151
-      for(let i = 1; i <= 898; i++) {
-        const pokePromise = fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json())
-        // console.log('promise ', pokePromise);
-        pokemonPromiseArray.push(pokePromise);
-      }
-
-      Promise.all(pokemonPromiseArray)
-      .then(loadedPokemonArray => setPokemonArray(loadedPokemonArray))
-      .catch(error => console.error(error))
-  }, [setPokemonArray])
+  const thePokemonArray = useContext(PokeContext)
+  console.log('flavortext', thePokemonArray)
 
   return (
     <div>
+      <TopBar setPokemonArray={(valuesArray) => setPokemonArray(valuesArray)}></TopBar>
       <PokeCollection pokemonArray={pokemonArray} />
     </div>
   );

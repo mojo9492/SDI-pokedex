@@ -2,10 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import PokeContextProvider from './PokeContext';
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <PokeContextProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </PokeContextProvider>,
   document.getElementById('root')
 );

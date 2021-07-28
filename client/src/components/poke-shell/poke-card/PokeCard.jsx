@@ -11,17 +11,6 @@ const PokeCard = (props) => {
     }
     const pokemonTypesRestructured = strPokeTypes.slice(0, strPokeTypes.length - 2);
 
-    // const pokeMoves = props.pokemon.moves;
-    // const pokeMovesArray = [];
-    // for (let i = 0; i <= 3; i++) {
-    //     const pokeMove = pokeMoves[i].move.name;
-    //     if (pokeMove) {
-    //         const newPokeMoveName = pokeMove.charAt(0).toUpperCase() + pokeMove.slice(1);
-    //         console.log(newPokeMoveName)
-    //         pokeMovesArray.push(newPokeMoveName)
-    //     }
-    // }
-
     if (props.pokemon) {
         return (
             <div className='poke-card'>

@@ -11,3 +11,10 @@
 - [ ] As a user, when I am viewing an individual pokemon, I should be presented with a panel that defaults to showing me their abilities, so that I can see their abilities.
 
 - [ ] As a user, I should be able to click an “environment” link/button from inside the individual pokemon page that changes the panel from abilities to information about that pokemon’s environment.
+
+- [ ] As a user, I should be able to click an “environment” link/button from inside the individual pokemon page that changes the panel from abilities to information about that pokemon’s environment.
+
+- [ ] As a user, when I navigate to the relative path “/pokemon/bulbasaur/environment”, I should land on a page that navigates to the individual pokemon page that specifically shows the environment in the information panel so that I can bookmark environment information for each pokemon.
+
+- [ ] As a user, I want to be able to leverage my browser's history capability to go forward and backward from the various routes in the SDI Pokedex.
+

@@ -15,6 +15,7 @@ const PokeShell = (props) => {
                 <PokeCard pokemon={props.pokemon}/>
             </div>
         );
+        
     } else if (props.clickState) {
         return (
             <div>

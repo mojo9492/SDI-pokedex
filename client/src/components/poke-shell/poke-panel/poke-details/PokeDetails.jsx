@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PageDetails = (props) => {
-    var arrTest = ['shoot fire','lightning blast','water blade'];
+    var arrTest = ['shoot fire', 'lightning blast', 'water blade'];
     if (!props.pageContents) {
         return (
             <div className='detailsContainer'>
@@ -11,7 +11,7 @@ const PageDetails = (props) => {
                         <p>{props.stats}</p>
                     </div>
                     <div id='abilitiesContainer'>
-                        {arrTest.map((ability, index) => {return (<div key={index} id='abilitiesBox'>{ability}</div>)})}
+                        {arrTest.map((ability, index) => { return (<div key={index} id='abilitiesBox'>{ability}</div>) })}
                     </div>
                 </div>
             </div>
