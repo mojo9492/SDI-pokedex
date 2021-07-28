@@ -8,7 +8,6 @@ import PokeContextProvider from './PokeContext';
 
 
 ReactDOM.render(
-
     <PokeContextProvider>
       <React.StrictMode>
         <App />

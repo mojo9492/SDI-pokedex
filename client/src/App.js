@@ -1,9 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PokeCollection from './components/poke-collection/PokeCollection';
 import TopBar from './components/top-bar/TopBar';
 import { PokeContext } from './PokeContext';
 
 const App = () => {
+  const pokemonArrayContext = useContext(PokeContext)
+  const [ pokemonArray, setPokemonArray ] = useState([]);
+
+  useEffect(() => {
+    setPokemonArray(pokemonArrayContext)
+  }, [pokemonArrayContext, setPokemonArray])
 
   //filter (type)
   //dropdownmenue filters pokemon array
@@ -14,12 +20,11 @@ const App = () => {
   // moves on stats
 
 
-  const thePokemonArray = useContext(PokeContext)
 
   return (
     <div>
-      <TopBar />
-      <PokeCollection pokemonArray={thePokemonArray} />
+      <TopBar setPokemonArray={filteredPokemonArray => setPokemonArray(filteredPokemonArray)}/>
+      <PokeCollection pokemonArray={pokemonArray} />
     </div>
   );
 }
