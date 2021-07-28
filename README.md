@@ -1,8 +1,8 @@
 # SDI-pokedex
 
-- [ ] As a user, I should be able to navigate to the home page and see a list of all the pokemon (at least the first 151), including their pictures, so that I can review the pokemon.
+- [x] As a user, I should be able to navigate to the home page and see a list of all the pokemon (at least the first 151), including their pictures, so that I can review the pokemon.
 
-- [ ] As a user I should be able to click on a pokemon’s picture that directs me to a web page that provides additional information about that pokemon, so that I can learn more about an individual pokemon.
+- [x] As a user I should be able to click on a pokemon’s picture that directs me to a web page that provides additional information about that pokemon, so that I can learn more about an individual pokemon.
 
 - [ ] As a user I should be able to navigate to an about page from any other page, so that I can read information about the team that developed this Pokedex application.
 
