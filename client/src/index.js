@@ -8,11 +8,13 @@ import PokeContextProvider from './PokeContext';
 
 
 ReactDOM.render(
+  <Router>
     <PokeContextProvider>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </PokeContextProvider>,
-    document.getElementById('root')
+    </PokeContextProvider>
+  </Router>,
+  document.getElementById('root')
 
 );
