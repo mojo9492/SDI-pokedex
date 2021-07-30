@@ -7,7 +7,6 @@ function PokeContextProvider({children}) {
     const [pokemonArray, setPokemonArray] = React.useState([]);
 
     React.useEffect(() => {
-        //option 1
         const pokemonPromiseArray = [];
         // for loop 1-151
         for (let i = 1; i <= 898; i++) {
