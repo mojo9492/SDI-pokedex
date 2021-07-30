@@ -107,15 +107,15 @@ const TopBar = (props) => {
         <div className='top-bar'>
             <label>
                 <span>Type Search</span>
-                <form onSubmit={formHandler}>
+                <form className={'top-bar-form'} onSubmit={formHandler}>
                     <label>
-                        <span>1:  </span>
+                        <span>Type 1:</span>
                         <select ref={optionInputRef}>
                             {typesArray.map((type, index) => <option defaultValue={undefined} key={index}>{type}</option>)}
                         </select>
                     </label>
                     <label>
-                        <span>2:  </span>
+                        <span>Type 2</span>
                         <select ref={optionSecondInputRef}>
                             {typesArray.map((type, index) => <option key={index}>{type}</option>)}
                         </select>

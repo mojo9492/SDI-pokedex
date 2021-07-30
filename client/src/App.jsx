@@ -12,6 +12,7 @@ const App = () => {
         <div className='home-container'>
             <header>
                 <h1 className='banner-message'>{bannerMessage}</h1>
+                <img src='https://img.rankedboost.com/wp-content/uploads/2017/09/Pokemon-GO-GEN-4-Pokedex.png' alt='Pokedex' />
             </header>
             <div className='home-main'>
                 <Link hidden={isPokeDexHidden} to='/pokedex'>
