@@ -1,37 +1,23 @@
-import React, { useContext } from 'react';
-import { PokeContext } from '../../../../PokeContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import PokeCard from './poke-card/PokeCard';
-import PokePanel from './poke-panel/PokePanel';
 
-const PokeShell = (props) => {
-    const pokemonArray = useContext(PokeContext)
-    if (!props.clickState) {
-       
 
-        return (
-            <div onClick={(event) => {
-                event.preventDefault()
-                props.setClickState(true)
-                props.setPokemonArray([props.pokemon])
+const PokeShell = ({ pokemon }) => {
 
-            }}>
-                <PokeCard pokemon={props.pokemon}/>
-            </div>
-        );
-        
-    } else if (props.clickState) {
-        return (
-            <div className='poke-shell'>
-                <PokeCard pokemon={props.pokemon} />
-                <button  onClick={(event) => {
-                event.preventDefault()
-                props.setClickState(false)
-                props.setPokemonArray(pokemonArray)
-            }}>Go Back</button>
-             <PokePanel pokemon={props.pokemon} />
-            </div>
-        );
-    };
+    
+    return (
+        <div className='poke-shell'>
+            <Link
+                className='poke-shell-link'
+                to={{
+                    pathname: `/pokedex/pokemon/${pokemon.id}`,
+                    state: { pokemon: pokemon }
+                }}>
+                <PokeCard pokemon={pokemon} />
+            </Link>
+        </div>
+    )
 };
 
 export default PokeShell;

@@ -1,8 +1,10 @@
-import React, { Suspense, useState } from 'react'
-import { Link, Route } from 'react-router-dom'
-import AboutPage from './components/about/About'
-import Loading from './components/Loading'
-const PokeApp = React.lazy(() => import('./components/poke-app/PokeApp'))
+import React, { Suspense, useState } from 'react';
+import { Link, Route } from 'react-router-dom';
+import AboutPage from './components/about/About';
+import Loading from './components/Loading';
+import PokeEnvironment from './components/poke-app/poke-collection/poke-shell/poke-panel/poke-environment/PokeEnvironment';
+import PokePanel from './components/poke-app/poke-collection/poke-shell/poke-panel/PokePanel';
+const PokeApp = React.lazy(() => import('./components/poke-app/PokeApp'));
 
 const App = () => {
     const [isPokeDexHidden, setIsPokeDexHidden] = useState(false);
@@ -39,7 +41,18 @@ const App = () => {
                     <PokeApp setBannerMessage={setBannerMessage} />
                 </Suspense>
             </Route>
+
+            <Route path='/pokedex/pokemon/:id'
+                render={({ history, location }) => <PokePanel pokemon={location.state.pokemon} />}
+            />
+            
+            <Route path='/pokedex/pokemon/:id/environment'
+                render={({ history, location }) => <PokeEnvironment encounters={location.state.encounters} />  }
+            />
+
             <Route exact path='/about' component={AboutPage} />
+
+            <Route path='/wat/404' render={() => <div className='error-404'><p><i>404</i>, my bro</p></div>} />
         </div>
     )
 }

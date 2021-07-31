@@ -165,6 +165,11 @@ button {
   padding: .5em;
 }
 
+.poke-shell-link {
+  color: black;
+  text-decoration: none;
+}
+
 .poke-card {
   width: auto;
   height: 19em;
@@ -236,8 +241,30 @@ button {
   padding: .5em;
 }
 
+.poke-panel-back-button {
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin-left: 1%;
+}
+
+.poke-panel-back-button>button {
+  color: white;
+  font-size: 1em;
+  background-color: var(--main);
+  opacity: .7;
+  border-radius: 5%;
+}
+
 .poke-panel button {
-  background-color: var(--secondary);
+  background-color: var(--main);
+  border-radius: 5%;
+  padding: 3%;
+}
+
+.poke-panel-types {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
 }
 
 .details-container {
@@ -252,10 +279,12 @@ button {
 
 .details-body {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
+  justify-content: flex-start;
 }
 
 .details-body label {
+  font-size: large;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -264,9 +293,16 @@ button {
 .details-body-moves>ul {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  align-content: center;
   height: 30em;
   width: auto;
+}
+
+.details-body li {
+  padding: 5%;
+  color: white;
+  font-size: medium;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .about-container {
