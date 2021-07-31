@@ -73,6 +73,13 @@ button {
   color: var(--accent);
 }
 
+.loading-component {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  color: var(--accent);
+}
+
 .top-bar {
   justify-content: center;
   margin: 2%;
@@ -168,6 +175,7 @@ button {
   border-radius: .334em;
   border: .55em solid var(--card-border);
   background-color: var(--card-background);
+  box-shadow: 5px 3px 5px black;
 }
 
 .poke-card-header {
@@ -188,6 +196,7 @@ button {
   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3c54c95-8c44-4e5b-93ae-389fe559bcbf/d56obz7-3620e4aa-94d3-495a-9d3c-8876dd548ca4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IzYzU0Yzk1LThjNDQtNGU1Yi05M2FlLTM4OWZlNTU5YmNiZlwvZDU2b2J6Ny0zNjIwZTRhYS05NGQzLTQ5NWEtOWQzYy04ODc2ZGQ1NDhjYTQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yRKqIdDb--XAMvTShkQbDqS2mn6-W5ynLrQwPJY0Bwk');
   border: .25em solid silver;
   border-radius: .334em;
+  box-shadow:  5px 2px 5px black;
   
 }
 

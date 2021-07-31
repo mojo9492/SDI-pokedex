@@ -1,38 +1,45 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { Link, Route } from 'react-router-dom'
 import AboutPage from './components/about/About'
-import PokeApp from './components/poke-app/PokeApp'
+import Loading from './components/Loading'
+const PokeApp = React.lazy(() => import('./components/poke-app/PokeApp'))
 
 const App = () => {
     const [isPokeDexHidden, setIsPokeDexHidden] = useState(false);
     const [isAboutHidden, setIsAboutDexHidden] = useState(false);
-    const [bannerMessage, setBannerMessage] = useState('Welcome')
+    const [loading, setIsLoading] = useState(false)
+    const [bannerMessage, setBannerMessage] = useState('Welcome');
+
 
     return (
         <div className='home-container'>
             <header>
                 <h1 className='banner-message'>{bannerMessage}</h1>
-                <img src='https://img.rankedboost.com/wp-content/uploads/2017/09/Pokemon-GO-GEN-4-Pokedex.png' alt='Pokedex' />
+                <img src='https://img.rankedboost.com/wp-content/uploads/2017/09/Pokemon-GO-GEN-4-Pokedex.png'
+                    alt='Pokedex' />
             </header>
             <div className='home-main'>
                 <Link hidden={isPokeDexHidden} to='/pokedex'>
                     <button onClick={() => {
-                        setBannerMessage('Pokedex')
                         setIsPokeDexHidden(true)
                         setIsAboutDexHidden(true)
                     }}>Enter!</button>
                 </Link>
                 <Link hidden={isAboutHidden} to='/about'>
                     <button onClick={() => {
-                        setBannerMessage('About the Pokedex')
                         setIsAboutDexHidden(true)
                         setIsPokeDexHidden(false)
+                        setBannerMessage('About the Pokedex Project')
                     }}>About</button>
                 </Link>
             </div>
 
-            <Route exact path='/pokedex' component={PokeApp}></Route>
-            <Route exact path='/about' component={AboutPage}></Route>
+            <Route exact path='/pokedex'>
+                <Suspense fallback={<Loading loading={loading} setBannerMessage={setBannerMessage} />}>
+                    <PokeApp setIsLoading={setIsLoading} setBannerMessage={setBannerMessage} />
+                </Suspense>
+            </Route>
+            <Route exact path='/about' component={AboutPage} />
         </div>
     )
 }

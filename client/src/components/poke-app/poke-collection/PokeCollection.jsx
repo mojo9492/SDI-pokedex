@@ -6,7 +6,7 @@ const PokeCollection = (props) => {
     const { pokemonArray, setPokemonArray } = props;
 
     return (
-        <div className='poke-collection'>
+        <div title='poke-collection' className='poke-collection'>
         {pokemonArray.map(pokemon => <PokeShell key={pokemon.id} clickState={clickState} setClickState={(newState) => { setClickState(newState) }}  pokemon={pokemon} setPokemonArray={setPokemonArray} />)}
         </div>
     );
