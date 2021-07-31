@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { PokeContext } from '../../PokeContext';
 import TopBar from './top-bar/TopBar';
 import { Link } from 'react-router-dom';
-const PokeCollection = React.lazy(() => import('./poke-collection/PokeCollection'));
+import PokeCollection from './poke-collection/PokeCollection';
+// const PokeCollection = React.lazy(() => import('./poke-collection/PokeCollection'));
 
 const PokeApp = ({ setBannerMessage }) => {
   const pokemonArrayContext = useContext(PokeContext)

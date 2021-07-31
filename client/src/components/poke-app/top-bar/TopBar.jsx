@@ -73,7 +73,6 @@ const TopBar = (props) => {
 
         } else if (optionInputRef.current.value && optionSecondInputRef.current.value) {
             setFormError('');
-            console.log('1 ', currentPokeTypeInput, '2 ', currentSecondPokeTypeInput)
             let resultArray = [];
 
             pokemonArray.filter(pokemon => {
@@ -110,14 +109,14 @@ const TopBar = (props) => {
                 <form className={'top-bar-form'} onSubmit={formHandler}>
                     <label>
                         <span>Type 1:</span>
-                        <select ref={optionInputRef}>
-                            {typesArray.map((type, index) => <option defaultValue={undefined} key={index}>{type}</option>)}
+                        <select aria-label='type-1-select' ref={optionInputRef}>
+                            {typesArray.map((type, index) => <option aria-label='type-1-option' defaultValue={undefined} key={index}>{type}</option>)}
                         </select>
                     </label>
                     <label>
                         <span>Type 2</span>
-                        <select ref={optionSecondInputRef}>
-                            {typesArray.map((type, index) => <option key={index}>{type}</option>)}
+                        <select aria-label='type-2-select' ref={optionSecondInputRef}>
+                            {typesArray.map((type, index) => <option aria-label='type-2-option' key={index}>{type}</option>)}
                         </select>
                     </label>
                     <button type='submit'>Filter</button>

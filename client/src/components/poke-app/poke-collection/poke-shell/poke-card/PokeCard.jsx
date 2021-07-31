@@ -13,7 +13,7 @@ const PokeCard = (props) => {
 
     if (props.pokemon) {
         return (
-            <div title='poke-card' className='poke-card'>
+            <div title='poke-card' id='poke-card' className='poke-card'>
                 <div className='poke-card-header'>
                     <div>{props.pokemon.name.toUpperCase()}</div>
                 </div>
