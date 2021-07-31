@@ -10,19 +10,16 @@ const PokeApp = ({ setBannerMessage }) => {
   const [isHomeButtonHidden, setIsHomeButtonHidden] = useState(true);
 
   useEffect(() => {
-
     setPokemonArray(pokemonArrayContext)
   }, [pokemonArrayContext, setPokemonArray, setBannerMessage])
 
-  if (!pokemonArray) {
+  if (!pokemonArrayContext) {
     setBannerMessage('Cannot load the pokedex')
 
     setIsHomeButtonHidden(false)
   }
 
-  if (pokemonArray.length > 0) {
-    setBannerMessage('Pokedex')
-  }
+
 
   return (
     <>

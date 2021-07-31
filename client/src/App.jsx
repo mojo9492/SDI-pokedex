@@ -7,8 +7,7 @@ const PokeApp = React.lazy(() => import('./components/poke-app/PokeApp'))
 const App = () => {
     const [isPokeDexHidden, setIsPokeDexHidden] = useState(false);
     const [isAboutHidden, setIsAboutDexHidden] = useState(false);
-    const [loading, setIsLoading] = useState(false)
-    const [bannerMessage, setBannerMessage] = useState('Welcome');
+    const [bannerMessage, setBannerMessage] = useState('Welcome to the Pokedex Project');
 
 
     return (
@@ -23,6 +22,7 @@ const App = () => {
                     <button onClick={() => {
                         setIsPokeDexHidden(true)
                         setIsAboutDexHidden(true)
+                        setBannerMessage('Pokedex')
                     }}>Enter!</button>
                 </Link>
                 <Link hidden={isAboutHidden} to='/about'>
@@ -35,8 +35,8 @@ const App = () => {
             </div>
 
             <Route exact path='/pokedex'>
-                <Suspense fallback={<Loading loading={loading} setBannerMessage={setBannerMessage} />}>
-                    <PokeApp setIsLoading={setIsLoading} setBannerMessage={setBannerMessage} />
+                <Suspense fallback={<Loading setBannerMessage={setBannerMessage} />}>
+                    <PokeApp setBannerMessage={setBannerMessage} />
                 </Suspense>
             </Route>
             <Route exact path='/about' component={AboutPage} />

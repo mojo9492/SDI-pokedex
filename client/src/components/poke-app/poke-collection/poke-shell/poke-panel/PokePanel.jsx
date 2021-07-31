@@ -19,7 +19,7 @@ const PokePanel = (props) => {
                 e.preventDefault()
                 setEnvironment(!environment);
             }} value='environment'>{
-                    !environment ? 'Show Environment' : 'Show Details'
+                    !environment ? 'Encounters' : 'Show Details'
                 }</button>
             <PokeDetails pageContents={environment} name={name} abilities={abilities} moves={moves} stats={stats} location={location_area_encounters} />
         </div>
